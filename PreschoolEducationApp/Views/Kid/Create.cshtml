@@ -1,0 +1,41 @@
+﻿@model Kid
+
+<form method ="post" asp-action="Create">
+<div class="col-md-8 order-md-1">
+          <h4 class="mb-3">Добавить ребёнка</h4>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label asp-for="FirstName">Имя</label>
+                <input asp-for="FirstName" class="form-control" placeholder="Введите ваше имя">
+                <span asp-validation-for="FirstName" class ="text-danger"></span>
+              </div>
+              <div class="col-md-6 mb-3">
+              <label asp-for="LastName">Фамилия</label>
+                <input asp-for="LastName" class="form-control" placeholder="Введите вашу фамилию">
+                <span asp-validation-for="LastName" class ="text-danger"></span>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label asp-for="Age">Возраст</label>
+                <input asp-for="Age" class="form-control" placeholder="Введите возраст ребёнка">
+                <span asp-validation-for="Age" class ="text-danger"></span>
+              </div>
+              <div class="mb-3">
+              <label asp-for="Address.City">Город</label>
+                <input asp-for="Address.City" class="form-control" placeholder="Введите город">
+                <span asp-validation-for="Address.City" class ="text-danger"></span>
+              </div>
+              <div class="mb-3">
+              <label asp-for="Address.Street">Улица</label>
+                <input asp-for="Address.Street" class="form-control" placeholder="Укажите улицу">
+                <span asp-validation-for="Address.Street" class ="text-danger"></span>
+              </div>
+              <div class="mb-3">
+              <label asp-for="KidGroupId">Группа</label>
+                <input asp-for="KidGroupId" class="form-control" placeholder="Укажите группу">
+                <span asp-validation-for="KidGroupId" class ="text-danger"></span>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Сохранить</button>
+            </form>
+

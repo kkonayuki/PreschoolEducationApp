@@ -1,0 +1,28 @@
+﻿@using PreschoolEducationApp.Enum
+@using PreschoolEducationApp.ViewModels
+@model EditKidGroupModel 
+
+<form method ="post" asp-action="Edit" enctype="multipart/form-data">
+  <div class="form-group">
+    <label asp-for ="Name">Название</label>
+    <input asp-for ="Name" class="form-control" placeholder="Введите название группы">
+    <span asp-validation-for="Name" class ="text-danger"></span>
+  </div>
+   <div class="form-group">
+    <label asp-for="GroupCategory">Категория</label>
+    <select asp-for="GroupCategory" asp-items="@Html.GetEnumSelectList<GroupCategory>()" class = "form-control form control-lg">
+      <option>Выберите категорию</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label asp-for ="Description">Описание</label>
+    <input asp-for ="Description" class="form-control" placeholder="Введите описание группы">
+    <span asp-validation-for="Description" class ="text-danger"></span>
+  </div>
+   <div class="form-group">
+    <label asp-for ="Image">Фотография</label>
+    <input asp-for ="Image" type="file"  class="form-control" placeholder="Добавьте фотографию">
+    <span asp-validation-for="Image" class ="text-danger"></span>
+  </div>
+  <button type="submit" class="btn btn-primary">Сохранить</button>
+</form>

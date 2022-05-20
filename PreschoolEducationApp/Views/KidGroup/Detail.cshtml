@@ -1,0 +1,56 @@
+﻿@model KidGroup
+
+
+<div class="container">
+
+    <h1 class="my-4">@Model.Name
+      
+    </h1>
+
+    <div class="row">
+        <div class="scontainer">
+
+  <div class="image-wrapper">
+    <img class="img-fluid" src="@Model.Image" alt="" />
+
+  </div>
+      <h3 class="my-3">Информация о группе</h3>
+        <p>@Html.DisplayTextFor(m => m.GroupCategory)
+         </p>
+        <p>@Model.Description</p>
+
+</div>
+  
+      <div class="col-md-4">
+        
+        <h3 class="my-3">Список учителей:</h3>
+        <ol>
+            @foreach (var item in @Model.Teachers)
+            {
+                <a asp-controller="Teacher" asp-action="Detail" asp-route-id="@item.Id"><li>@item.GetName()</li></a>
+            }
+                
+         
+        </ol>
+        <hr>
+        <a type="btn btn-success" button asp-controller="Teacher" asp-action="Create"
+                  class="btn btn-sm btn-outline-primary">Добавить учителя</a>
+         
+        
+        <h3 class="my-3">Список детей:</h3>
+        <ol>
+            @foreach (var item in @Model.Kids)
+            {
+                <a asp-controller="Kid" asp-action="Detail" asp-route-id="@item.Id"><li>@item.GetName()</li></a>
+                }
+                
+       
+        </ol>
+        <hr>
+        <a type="btn btn-success" button asp-controller="Kid" asp-action="Create"
+                 class="btn btn-sm btn-outline-primary">Добавить ребенка</a>
+      </div>
+  
+  </div>
+  </div>
+

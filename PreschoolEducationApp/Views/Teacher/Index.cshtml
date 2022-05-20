@@ -1,0 +1,23 @@
+﻿@model IEnumerable<Teacher> 
+
+ <div class="album py-5 bg-light">
+    <div class="container">
+        <div class="row row-cols-1 row-cols-sm-1 row-cols-md-4 g-4">
+          @foreach (var item in Model)
+            {
+                <div class="col">
+              <p class="card-text">Имя: @item.FirstName
+              <br>Фамилия: @item.LastName</p>
+                <div class="d-flex align-items-center">
+                <div class="btn-group">
+                  <a type="btn btn-success" button asp-controller="Teacher" asp-action="Detail" asp-route-id="@item.Id"
+                  class="btn btn-sm btn-outline-secondary">Посмотреть</a>
+                  <a type="btn btn-success" button asp-controller="Teacher" asp-action="Edit" asp-route-id="@item.Id"
+                  class="btn btn-sm btn-outline-primary">Редактировать</a>
+                </div>
+              </div>
+            </div> 
+            }
+            </div>
+          </div>
+        </div>

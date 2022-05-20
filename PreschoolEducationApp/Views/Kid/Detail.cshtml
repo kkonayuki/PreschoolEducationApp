@@ -1,0 +1,9 @@
+﻿@model Kid
+
+<h3>Информация о ребёнке</h3>
+<hr class="featurette-divider">
+<h4>@Model.GetName()</h4>
+<p>Возраст: @Model.Age<br>
+Группа: @Model.KidGroups.Name</p>  
+<a type="btn btn-success" button asp-controller="Kid" asp-action="Delete" asp-route-id="@Model.Id"
+                  class="btn btn-sm btn-outline-danger">Удалить ребёнка</a>

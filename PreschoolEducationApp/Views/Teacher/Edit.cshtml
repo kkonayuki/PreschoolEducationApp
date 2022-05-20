@@ -1,0 +1,42 @@
+﻿@using PreschoolEducationApp.ViewModels
+@model EditTeacherViewModel
+
+<form method ="post" asp-action="Edit">
+    <input type ="hidden" value="AddressId" id="AddressId" />
+  <div class="form-group">
+    <label asp-for ="FirstName">Имя</label>
+    <input asp-for ="FirstName" class="form-control" placeholder="Введите имя">
+    <span asp-validation-for="FirstName" class ="text-danger"></span>
+  </div>
+  <div class="form-group">
+    <label asp-for ="LastName">Фамилия</label>
+    <input asp-for ="LastName" class="form-control" placeholder="Введите фамилию">
+    <span asp-validation-for="LastName" class ="text-danger"></span>
+  </div>
+  <div class="form-group">
+    <label asp-for ="Age">Возраст</label>
+    <input asp-for ="Age" class="form-control" placeholder="Введите возраст">
+    <span asp-validation-for="Age" class ="text-danger"></span>
+  </div>
+  <div class="form-group">
+    <label asp-for ="PhoneNumber">Телефон</label>
+    <input asp-for ="PhoneNumber" class="form-control" placeholder="Введите номер телефона">
+    <span asp-validation-for="PhoneNumber" class ="text-danger"></span>
+  </div>
+    <div class="form-group">
+    <label asp-for ="Address.City">Город</label>
+    <input asp-for ="Address.City" class="form-control" placeholder="Укажите город">
+    <span asp-validation-for="Address.City" class ="text-danger"></span>
+  </div>
+    <div class="form-group">
+    <label asp-for ="Address.Street">Улица</label>
+    <input asp-for ="Address.Street" class="form-control" placeholder="Укажите улицу">
+    <span asp-validation-for="Address.Street" class ="text-danger"></span>
+  </div>
+      <div class="form-group">
+    <label asp-for ="KidGroupId">Группа</label>
+    <input asp-for ="KidGroupId" class="form-control" placeholder="Укажите группу">
+    <span asp-validation-for="KidGroupId" class ="text-danger"></span>
+  </div>
+  <button type="submit" class="btn btn-primary">Сохранить</button>
+</form>
